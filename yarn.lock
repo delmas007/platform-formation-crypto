@@ -2532,11 +2532,11 @@
   resolved "https://registry.npmjs.org/@multiformats/base-x/-/base-x-4.0.1.tgz"
   integrity sha512-eMk0b9ReBbV23xXU693TAIrLyeO5iTgBZGSJfpqriG8UkYvr/hC9u9pyMlAakDNHWmbhMZCDs6KQO0jzKD8OTw==
 
-"@my-app/contracts@^1.0.0", "@my-app/contracts@file:C:\\Users\\angam\\Desktop\\platform-react\\packages\\contracts":
+"@my-app/contracts@^1.0.0", "@my-app/contracts@file:C:\\Users\\delmas.angaman\\Desktop\\platform-formation-crypto\\packages\\contracts":
   version "1.0.0"
   resolved "file:packages/contracts"
 
-"@my-app/react-app@file:C:\\Users\\angam\\Desktop\\platform-react\\packages\\react-app":
+"@my-app/react-app@file:C:\\Users\\delmas.angaman\\Desktop\\platform-formation-crypto\\packages\\react-app":
   version "1.0.0"
   resolved "file:packages/react-app"
   dependencies:
@@ -3756,8 +3756,6 @@
   integrity sha512-xQ67Yc/laOG5uMfX/093MRlGGCIBzZMarVa+gfNKJxWAIgykYpVGkBdbqEzGDDfCrVUj6Hiff4mTZ5BA6TmAog==
   dependencies:
     "@types/yargs-parser" "*"
-
-"@typescript-eslint/eslint-plugin@^4.0.0 || ^5.0.0", "@typescript-eslint/eslint-plugin@^5.5.0":
 
 "@typescript-eslint/experimental-utils@^5.0.0":
   version "5.62.0"

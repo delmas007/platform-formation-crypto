@@ -1,4 +1,8 @@
-export { 
+export {getFactoryInfo} from './getFactoryInfo';
+export {getPairInfo} from './getPairInfo';
+export {getRouterInfo} from './getRouterInfo';
+
+export {
   getAvailableTokens,
   getCounterpartTokens,
   findPoolByTokens,

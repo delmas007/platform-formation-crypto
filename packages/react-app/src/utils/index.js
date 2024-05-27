@@ -1,5 +1,5 @@
 export {getFactoryInfo} from './getFactoryInfo';
-export {getPairInfo} from './getPairInfo';
+export {getPairsInfo} from './getPairsInfo';
 export {getRouterInfo} from './getRouterInfo';
 
 export {

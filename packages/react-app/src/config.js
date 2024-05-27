@@ -1,6 +1,6 @@
 import { Goerli } from "@usedapp/core";
 
-export const ROUTER_ADDRESS = "[YOUR ADDRESS HERE]"; 
+export const ROUTER_ADDRESS = "0xfF58FA7C6FDdFd0814c4e5aD2AF26028Bb49466A";
 
 export const DAPP_CONFIG = {
   readOnlyChainId: Goerli.chainId,

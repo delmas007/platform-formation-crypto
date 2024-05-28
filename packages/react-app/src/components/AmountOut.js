@@ -1,5 +1,7 @@
-export const AmountOut = () => {
+function AmountOut(){
     return (
         <></>
     )
 }
+
+export default AmountOut;

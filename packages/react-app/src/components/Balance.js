@@ -1,5 +1,6 @@
-export const Balance = () => {
+function Balance (){
     return (
         <></>
     )
 }
+export default Balance;

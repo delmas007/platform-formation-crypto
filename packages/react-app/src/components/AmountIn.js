@@ -2,8 +2,9 @@ import React,{useState,useEffect,useRef} from 'react';
 import {chevronDown} from "../assets";
 import styles from "../styles";
 import {useOnClickOutside} from "../utils";
+import Exchange from "./Exchange";
 
-export const AmountIn = () => {
+function AmountIn(){
     return (
         <div className={styles.amountContainer}>
             <input
@@ -22,3 +23,4 @@ export const AmountIn = () => {
         </div>
     )
 }
+export default AmountIn;

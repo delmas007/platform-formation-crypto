@@ -8,7 +8,20 @@ import {ROUTER_ADDRESS} from "../config";
 
 function Exchange({pools}) {
     return (
-        <div>Exchange</div>
+        <div className="flex flex-col w-full items-center">
+            <div className="mb-8">
+                <AmoutIn
+
+                />
+                <Balance/>
+            </div>
+            <div className="mb-8">
+                <AmoutOut
+
+                />
+                <Balance/>
+            </div>
+        </div>
     );
 }
 

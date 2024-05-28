@@ -2,12 +2,15 @@ import  web3 from 'web3';
 import { useEffect, useState } from 'react';
 import {useConfig} from "@usedapp/core";
 import {ROUTER_ADDRESS} from "../config";
+import {getFactoryInfo,getRouterInfo} from "../utils";
 
 export const loadPools = async (provideUrl) => {
     const provider = new web3.providers.HttpProvider(provideUrl);
     const web3 = new web3(provider);
-    const routerInfo = null;
-    const factoryInfo = null;
+    const routerInfo = await getRouterInfo(ROUTER_ADDRESS,web3);
+    const factoryInfo = await getFactoryInfo(routerInfo.factory,web3);
+
+    return factoryInfo.pairsInfo;
 }
 
 export const usePools = () => {
@@ -21,7 +24,7 @@ export const usePools = () => {
             setLoading(false);
         } )
 
-    }, [loading,readOnlyChainId])
+    }, [readOnlyUrls,readOnlyChainId])
 
     return [loading,pools]
 }

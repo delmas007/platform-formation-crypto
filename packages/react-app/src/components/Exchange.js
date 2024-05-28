@@ -6,7 +6,7 @@ import {ethers} from "ethers";
 import {parseUnits} from "ethers/lib/utils";
 import {ROUTER_ADDRESS} from "../config";
 
-function Exchange(props) {
+function Exchange({pools}) {
     return (
         <div>Exchange</div>
     );

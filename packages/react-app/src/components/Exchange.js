@@ -5,18 +5,20 @@ import  {ERC20,useEthers,useContractFunction,useTokenAllowance,useTokenBalance} 
 import {ethers} from "ethers";
 import {parseUnits} from "ethers/lib/utils";
 import {ROUTER_ADDRESS} from "../config";
+import {AmountIn, AmountOut, Balance} from "./index";
+import {getAvailableTokens, getCounterpartTokens,findPoolByTokens,isOperationPending,getFailureMessage,getSuccessMessage} from "../utils";
 
 function Exchange({pools}) {
     return (
         <div className="flex flex-col w-full items-center">
             <div className="mb-8">
-                <AmoutIn
+                <AmountIn
 
                 />
                 <Balance/>
             </div>
             <div className="mb-8">
-                <AmoutOut
+                <AmountOut
 
                 />
                 <Balance/>

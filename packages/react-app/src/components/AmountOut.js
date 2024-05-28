@@ -1,4 +1,4 @@
-export const AmoutOut = () => {
+export const AmountOut = () => {
     return (
         <></>
     )

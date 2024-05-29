@@ -9,6 +9,11 @@ import {AmountIn, AmountOut, Balance} from "./index";
 import {getAvailableTokens, getCounterpartTokens,findPoolByTokens,isOperationPending,getFailureMessage,getSuccessMessage} from "../utils";
 
 function Exchange({pools}) {
+    const isApproving = isOperationPending("approve"); //TODO
+    const isSwapping = isOperationPending("swap");//TODO
+
+    // const successMessage = getSuccessMessage();//TODO
+    // const failureMessage = getFailureMessage();//TODO
     return (
         <div className="flex flex-col w-full items-center">
             <div className="mb-8">
@@ -23,8 +28,13 @@ function Exchange({pools}) {
                 />
                 <Balance/>
             </div>
+            {"approvedNeeded" && !isSwapping} (
+                <button>
+                    {isApproving ? "Approving..." : "Approve"}
+                </button>
+            )
         </div>
-    );
+    )
 }
 
 export default Exchange;

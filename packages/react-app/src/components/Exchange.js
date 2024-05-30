@@ -7,6 +7,7 @@ import {parseUnits} from "ethers/lib/utils";
 import {ROUTER_ADDRESS} from "../config";
 import {AmountIn, AmountOut, Balance} from "./index";
 import {getAvailableTokens, getCounterpartTokens,findPoolByTokens,isOperationPending,getFailureMessage,getSuccessMessage} from "../utils";
+import styles from "../styles";
 
 function Exchange({pools}) {
     const isApproving = isOperationPending("approve"); //TODO
@@ -28,11 +29,15 @@ function Exchange({pools}) {
                 />
                 <Balance/>
             </div>
-            {"approvedNeeded" && !isSwapping} (
-                <button>
+            {"approvedNeeded" && !isSwapping  (
+                <button
+                    disabled={!"canApprove"}
+                    onClick={() => {}}
+                    className={"canApprove" ? "bg-site-pink" : "bg-site-dim2" `${styles.actionButton}`}
+                >
                     {isApproving ? "Approving..." : "Approve"}
                 </button>
-            )
+            )}
         </div>
     )
 }

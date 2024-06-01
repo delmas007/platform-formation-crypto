@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+    import React, {useState} from 'react';
 import {Contract} from "@ethersproject/contracts";
 import {abis} from "@my-app/contracts";
 import  {ERC20,useEthers,useContractFunction,useTokenAllowance,useTokenBalance} from "@usedapp/core";
@@ -29,15 +29,15 @@ function Exchange({pools}) {
                 />
                 <Balance/>
             </div>
-            {"approvedNeeded" && !isSwapping  (
-                <button
-                    disabled={!"canApprove"}
-                    onClick={() => {}}
-                    className={"canApprove" ? "bg-site-pink" : "bg-site-dim2" `${styles.actionButton}`}
-                >
-                    {isApproving ? "Approving..." : "Approve"}
-                </button>
-            )}
+            {/*{"approvedNeeded" && !isSwapping  (*/}
+            {/*    <button*/}
+            {/*        disabled={!"canApprove"}*/}
+            {/*        onClick={() => {}}*/}
+            {/*        className={"canApprove" ? "bg-site-pink" : "bg-site-dim2" `${styles.actionButton}`}*/}
+            {/*    >*/}
+            {/*        {isApproving ? "Approving..." : "Approve"}*/}
+            {/*    </button>*/}
+            {/*)}*/}
         </div>
     )
 }

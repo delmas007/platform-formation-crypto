@@ -9,6 +9,8 @@ function AmountIn({value,onChange,currencyValue,onSelect,currencies,isSwapping})
     const [activeCurrency,setActiveCurrency] = useState("Select");
     const ref = useRef();
     useOnClickOutside(ref,() => setShowList(false));
+    console.log(activeCurrency);
+    console.log(currencies.tokenName);
     return (
         <div className={styles.amountContainer}>
             <input
@@ -28,13 +30,10 @@ function AmountIn({value,onChange,currencyValue,onSelect,currencies,isSwapping})
                 </button>
 
                 {showList && (
-                <ul className={styles.currencyList}>
-                    {[
-                        {token: "ETH",tokenName: "ETH"},
-                        {token: "DAI",tokenName: "DAI"},
-                    ].map(({token,tokenName},index) => (
+                <ul ref={ref} className={styles.currencyList}>
+                    {Object.entries(currencies).map(([token,tokenName],index) => (
                         <li key={index}>
-                            <li className={`${styles.currencyListItem} ${true ? 'bg-site-dim2' : ''} cursor-pointer`}>
+                            <li className={`${styles.currencyListItem} ${activeCurrency === tokenName ? 'bg-site-dim2' : ''} cursor-pointer`}>
                                 {tokenName}
 
                             </li>

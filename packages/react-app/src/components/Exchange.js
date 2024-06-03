@@ -9,17 +9,17 @@ import {AmountIn, AmountOut, Balance} from "./index";
 import {getAvailableTokens, getCounterpartTokens,findPoolByTokens,isOperationPending,getFailureMessage,getSuccessMessage} from "../utils";
 import styles from "../styles";
 
-    function Exchange({ pools }) {
+    function Exchange({ pools = [] }) {
         const { account, library: provider } = useEthers(); // Get the provider from useEthers
         const [fromValue, setFromValue] = useState("0");
-        const [fromToken, setFromToken] = useState(pools && pools.length > 0 ? pools[0].token0Address : "");
+        const [fromToken, setFromToken] = useState(pools.length > 0 ? pools[0].token0Address : "");
         const [toToken, setToToken] = useState("");
         const [resetState, setResetState] = useState(false);
 
         const fromValueBigNumber = parseUnits(fromValue || "0");
-        const availableTokens = getAvailableTokens(pools || []);
-        const counterpartTokens = getCounterpartTokens(pools || [], fromToken);
-        const pairAddress = findPoolByTokens(pools || [], fromToken, toToken)?.address ?? "";
+        const availableTokens = getAvailableTokens(pools);
+        const counterpartTokens = getCounterpartTokens(pools, fromToken);
+        const pairAddress = findPoolByTokens(pools, fromToken, toToken)?.address ?? "";
 
         const routerContract = new Contract(ROUTER_ADDRESS, abis.router02, provider); // Pass the provider here
         const fromTokenContract = new Contract(fromToken, ERC20.abi, provider); // Pass the provider here

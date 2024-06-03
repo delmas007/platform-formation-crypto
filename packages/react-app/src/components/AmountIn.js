@@ -4,21 +4,24 @@ import styles from "../styles";
 import {useOnClickOutside} from "../utils";
 import Exchange from "./Exchange";
 
-function AmountIn(){
+function AmountIn({value,onChange,currencyValue,onSelect,currencies,isSwapping}){
     const [showList,setShowList] = useState(false);
+    const [activeCurrency,setActiveCurrency] = useState("Select");
+    const ref = useRef();
+    useOnClickOutside(ref,() => setShowList(false));
     return (
         <div className={styles.amountContainer}>
             <input
                 placeholder="0.0"
                 className={styles.amountInput}
-                value=""
+                value={value}
                 type="number"
-                disabled={false}
-                onChange={() => {}}
+                disabled={isSwapping}
+                onChange={(e) => typeof onChange === 'function' && onChange(e.target.value)}
             />
             <div className="relative" onClick={() => setShowList((prevState)=>(!prevState))}>
                 <button className={styles.currencyButton}>
-                    {"ETH"}
+                    {activeCurrency}
                      <img src={chevronDown}
                           alt="chevron down"
                           className={`w-4 h-4 object-contain ml-2 ${showList ? 'rotate-180' : 'rotate-0'}`}/>

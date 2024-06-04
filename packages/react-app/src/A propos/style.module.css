@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  .App {
+    text-align: center;
+  }
+
+  .AboutSection {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.AboutSection h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.AboutContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.AboutItem {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+}
+
+.AboutItem h3 {
+  font-size: 1.5em;
+  margin: 0 0 10px;
+}
+
+.AboutItem p {
+  font-size: 1em;
+  color: #666;
+}

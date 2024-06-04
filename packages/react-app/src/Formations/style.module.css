@@ -1,0 +1,80 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #f3f4f6; /* Tailwind's bg-gray-100 */
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .AppHeader {
+    width: 100%;
+    background-color: #1f2937; /* Tailwind's bg-gray-800 */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .HeaderButtons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .Button {
+    background-color: #3b82f6; /* Tailwind's bg-blue-500 */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .Button:hover {
+    background-color: #2563eb; /* Tailwind's bg-blue-600 */
+  }
+  
+  .CourseCard {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  
+  .CourseCard img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .CourseCard h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 10px;
+  }
+  
+  .CourseCard p {
+    padding: 0 10px;
+    font-size: 1rem;
+    color: #4b5563; /* Tailwind's text-gray-700 */
+  }
+  
+  .CourseCard a {
+    display: inline-block;
+    background-color: #3b82f6; /* Tailwind's bg-blue-500 */
+    color: #fff;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .CourseCard a:hover {
+    background-color: #2563eb; /* Tailwind's bg-blue-600 */
+  }
+  

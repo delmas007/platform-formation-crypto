@@ -1,45 +1,27 @@
 import React from "react"
-import {useEthers} from "@usedapp/core";
-import styles from "./styles";
-import {uniswapLogo} from "./assets";
-import {Exchange, Loader, WalletButton} from "./components";
-import {usePools} from "./hooks";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Accueil} from "./Accueil/accueil";
+import {Connexion} from "./connexion/connexion";
+import {Inscription} from "./inscription/inscription";
+import {Propos} from "./A propos/a_propos";
+import {Formations} from "./Formations/formations";
+import {CourseDetail} from "./CoursDetails/Cours";
+import {Tutoriat} from "./Tutoriat/tutoriat";
 
 const App = () => {
-    const {account} = useEthers();
-    const {loading, pools} = usePools();
-    const poolsLoading = false;
   return(
-      <div className={styles.container}>
-      <div className={styles.innerContainer}>
-        <header className={styles.header}>
-          <img
-              src={uniswapLogo}
-              alt="Uniswap Logo"
-                className="w-16 h-16 object-contain"
-          />
-          <WalletButton/>
-        </header>
-        <div className={styles.exchangeContainer}>
-          <h1 className={styles.headTitle}>Uniswap 2.0</h1>
-          <p className={styles.subTitle}>Exchange tokens in seconds</p>
+      <BrowserRouter>
+          <Routes>
+                  <Route index element={<Accueil />} />
+                  <Route path="/connexion" element={<Connexion />} />
+                  <Route path='/inscription' element={<div><Inscription/></div>}/>
+                  <Route path="/about" element={<div><Propos/></div>} />
+                  <Route path="/formations" element={<div><Formations/></div>} />
+                  <Route path="/course/:courseId" element={<div><CourseDetail/></div>} />
+                  <Route path="/tutoriat" element={<div><Tutoriat/></div>} />
 
-          <div className={styles.exchangeBoxWrapper}>
-            <div className={styles.exchangeBox}>
-              <div className="pink_gradient"/>
-                <div className={styles.exchange}>
-                  {account ? (
-                      loading ? (
-                          <Loader title="Loading, pools please wait"/>
-                        ) : <Exchange pools ={pools}/>
-                      ) : <Loader title="please connect your wallet"/> }
-                </div>
-              <div className="pink_gradient"/>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+          </Routes>
+      </BrowserRouter>
   )
 }
 

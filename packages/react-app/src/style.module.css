@@ -1,0 +1,56 @@
+.AppHeader {
+    background-color: #282c34;
+    padding: 20px;
+    color: white;
+    position: relative;
+    text-align: center;
+
+  }
+  
+  .HeaderButtons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .Button {
+    background-color: #61dafb;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  .Button:hover {
+    background-color: #21a1f1;
+  }
+  
+  .AppHeader h1 {
+    font-size: 2.5em;
+    margin: 20px 0;
+  }
+  
+  .AppHeader p {
+    font-size: 1.2em;
+  }
+  
+  .AppHeader a {
+    color: #61dafb;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+  .Footer {
+    background-color: #282c34;
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .Footer p {
+    margin: 0;
+  }

@@ -30,9 +30,12 @@ export function Header(){
         {location.pathname !== "/tutoriat" && (
         <Link to="/tutoriat">Tutorat</Link>  
         )}
-        {location.pathname !== "/tutoriat" && " | "} 
-        <Link to="/">Consultation</Link>  | 
-        <Link to="/">Gestion de Cryptomonnaie</Link> |
+        {location.pathname !== "/tutoriat" && " | "}
+        <Link to="/">Consultation</Link>  |
+            {location.pathname !== "/cryptomonnaie" && (
+        <Link to="/cryptomonnaie">Gestion de Cryptomonnaie</Link>
+            )}
+            {location.pathname !== "/cryptomonnaie" && " | "}
         <Link to="/about">A Propos</Link> 
         </p>
         

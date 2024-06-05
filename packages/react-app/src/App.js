@@ -7,6 +7,7 @@ import {Propos} from "./A propos/a_propos";
 import {Formations} from "./Formations/formations";
 import {CourseDetail} from "./CoursDetails/Cours";
 import {Tutoriat} from "./Tutoriat/tutoriat";
+import Crypto from "./crypto";
 
 const App = () => {
   return(
@@ -19,6 +20,7 @@ const App = () => {
                   <Route path="/formations" element={<div><Formations/></div>} />
                   <Route path="/course/:courseId" element={<div><CourseDetail/></div>} />
                   <Route path="/tutoriat" element={<div><Tutoriat/></div>} />
+                  <Route path="/cryptomonnaie" element={<div><Crypto/></div>} />
 
           </Routes>
       </BrowserRouter>

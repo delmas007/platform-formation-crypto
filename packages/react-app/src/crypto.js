@@ -4,13 +4,17 @@ import styles from "./styles";
 import {uniswapLogo} from "./assets";
 import {Exchange, Loader, WalletButton} from "./components";
 import {usePools} from "./hooks";
+import s from "./Tutoriat/style.module.css";
+import {Header} from "./header";
 
 const Crypto = () => {
     const {account} = useEthers();
     const {loading, pools} = usePools();
     const poolsLoading = false;
     return(
-        <div className={styles.container}>
+        <div className={`font-sans p-6 ${s.App}`}>
+            <Header />
+            <div className={styles.container}>
             <div className={styles.innerContainer}>
                 <header className={styles.header}>
                     <img
@@ -39,6 +43,7 @@ const Crypto = () => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     )
 }

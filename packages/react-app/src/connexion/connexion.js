@@ -11,6 +11,7 @@ export function Connexion() {
     const onSubmit = async (data) => {
         utilisateurApi().connexionUtilisateur(data.username, data.password).then(
             (resp) => {
+                localStorage.setItem('token', resp.data.accessToken);
                 console.log(resp);
             }
         ).catch((err) => {  console.log(err); }

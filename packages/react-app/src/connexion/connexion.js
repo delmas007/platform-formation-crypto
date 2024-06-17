@@ -1,18 +1,19 @@
 import React from "react";
 import s from "./style.module.css";
-import { Link } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import { Header } from "../header";
 import {useForm} from "react-hook-form";
 import {utilisateurApi} from "../Api/ApiUtilisateur";
 
 export function Connexion() {
     const { register, handleSubmit, formState: { errors } } = useForm();
-
+    const navigate = useNavigate();
     const onSubmit = async (data) => {
         utilisateurApi().connexionUtilisateur(data.username, data.password).then(
             (resp) => {
                 localStorage.setItem('token', resp.data.accessToken);
                 console.log(resp);
+                navigate('/tutoriat');
             }
         ).catch((err) => {  console.log(err); }
         )

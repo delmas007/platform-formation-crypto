@@ -18,7 +18,7 @@ export function Tutoriat() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     setIsLoggedIn(!!token);
-    fetch('http://localhost:5050/tutos/')
+    fetch('http://localhost:5051/tutos/')
         .then(response => response.json())
         .then(data => {
           // Trier les publications par date de publication (du plus récent au plus ancien)

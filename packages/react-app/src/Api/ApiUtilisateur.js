@@ -5,10 +5,10 @@ export function utilisateurApi() {
         connexionUtilisateur: (username, password) => {
             const authentification = { username, password };
             console.log(authentification);
-            return axios.post('http://localhost:5050/connexion/', authentification);
+            return axios.post('http://localhost:5051/connexion/', authentification);
         },
         inscriptionUtilisateur: (etudiantDto) => {
-            return axios.post('http://localhost:5050/inscription/', etudiantDto);
+            return axios.post('http://localhost:5051/inscription/', etudiantDto);
         }
     }
 }

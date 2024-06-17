@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { Link } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import s from "./style.module.css";
 import { Header } from "../header";
 import axios from "axios";
@@ -8,12 +8,15 @@ import {useForm} from "react-hook-form";
 export function Inscription() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [photoFileName, setPhotoFileName] = useState('');
+  const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     try {
       // Envoyer l'URL de la photo au backend
-      const response = await axios.post('http://localhost:5050/inscription/', { ...data, photo: `/photos/${photoFileName}` });
+      const response = await axios.post('http://localhost:5051/inscription/', { ...data, photo: `/photos/${photoFileName}` });
       console.log(response.data);
+      navigate('/connexion');
+
     } catch (error) {
       console.error(error);
     }
